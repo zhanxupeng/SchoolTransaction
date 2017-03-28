@@ -11,4 +11,6 @@ public interface UserService {
 	void updateUser(Map<String, Object> param);
 	//用户添加用户信息
 	void insertUser(User user);
+	//按id查询用户
+	User selectUser(int loginname);
 }

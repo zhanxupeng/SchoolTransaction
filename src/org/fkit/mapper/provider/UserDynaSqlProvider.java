@@ -9,7 +9,7 @@ public class UserDynaSqlProvider {
 	public String insertUser(User user){
 		return new SQL(){
 			{
-				INSERT_INTO("user");
+				INSERT_INTO("myuser");
 				VALUES("loginname", "#{loginname}");
 				VALUES("password","#{password}");
 				if(user.getUsername()!=null&&!user.getUsername().equals("")){
@@ -31,7 +31,10 @@ public class UserDynaSqlProvider {
 					VALUES("dollar_id","#{dollar_id}");
 				}
 				if(user.getFlag()!=0){
-					VALUES("image","#{iamge}");
+					VALUES("flag","#{flag}");
+				}
+				if(user.getImage()!=null&&!user.getImage().equals("")){
+					VALUES("image","#{image}");
 				}
 			}
 		}.toString();
@@ -40,7 +43,7 @@ public class UserDynaSqlProvider {
 	public String updateUser(Map<String, Object> param){
 		return new SQL(){
 			{
-				UPDATE("user");
+				UPDATE("myuser");
 				if(param.get("password")!=null){
 					SET(" password =#{password}");
 				}

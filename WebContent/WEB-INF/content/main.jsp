@@ -12,15 +12,16 @@
 <nav class="navbar navbar-default" role="navigation"> 
     <div class="container-fluid"> 
     <div>
-     
         <p class="navbar-text navbar-left"><a href="main.jsp">主页</a></p>
         <c:choose>
         <c:when test="${empty user }"> 
-        <p class="navbar-text navbar-right"><a href="register.jsp">登录</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-        <p class="navbar-text navbar-right"><a href="register.jsp">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p class="navbar-text navbar-right"><a href="loginForm">登录</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p class="navbar-text navbar-right"><a href="toregister">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </c:when>
         <c:otherwise>
-        <p class="navbar-text navbar-right">尊敬的[${user.username }]&nbsp;&nbsp;</p>
+        <p class="navbar-text navbar-right"><a href="main.jsp">退出</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p class="navbar-text navbar-right">尊敬的[<a href="changeUser">${user.username }]</a>
+        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </c:otherwise>
         </c:choose> 
     </div> 
@@ -37,7 +38,15 @@
 
 <div class="zero1">
 	<div class="fore">
-		<div class="fore-1">闪讯</div>
+		<div class="fore-1">
+			闪讯：
+		</div>
+		<div class="fore-1">
+			<a href="toshop?small_id=1" target="leftFrame">10M</a>
+		</div>
+		<div class="fore-1">
+			<a href="toshop?small_id=2" target="leftFrame">20M</a>
+		</div>
 		<div class="fore-1">单车</div>
 		<div class="fore-1">电驴</div>
 		<div class="fore-1">汽车</div>
@@ -45,7 +54,10 @@
 		<div class="fore-1">书籍</div>
 		<div class="fore-1">敬请期待</div>
 	</div>
-	<div class="fore1">热门推荐</div>
+	<div class="fore1">
+	<iframe height="100%" width="100%" frameborder="0" src="https://www.baidu.com"
+				name="leftFrame" id="leftFrame" title="leftFrame" scrolling="yes"></iframe>
+	</div>
 </div>
 </center>
 </body>

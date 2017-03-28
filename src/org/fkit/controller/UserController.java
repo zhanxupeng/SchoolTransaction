@@ -1,12 +1,14 @@
 package org.fkit.controller;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.fkit.domain.User;
 import org.fkit.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,5 +41,37 @@ public class UserController {
 	@RequestMapping(value="/{loginForm}")
 	public String loginForm(@PathVariable String loginForm){
 		return loginForm;
+	}
+	@RequestMapping(value="/toshop")
+	public String toShop(@RequestParam("small_id") Integer small_id){
+		System.out.println(small_id);
+		return "toshop";
+	}
+	@RequestMapping(value="/toregister")
+	public String toRegister(){
+		return "register";
+	}
+	//用户注册
+	@RequestMapping(value="/register")
+	public ModelAndView saveuser(@Valid User user,ModelAndView mv,Errors errors){
+		System.out.println("Hello");
+		User result=userService.selectUser(user.getLoginname());
+		if(errors.hasErrors()){
+			mv.setViewName("register");
+			return mv;
+		}
+		if(result==null){
+			if(user.getDollar_id()!=null){
+				user.setFlag(1);
+			}else{
+				user.setFlag(0);
+			}
+			userService.insertUser(user);
+			mv.setViewName("successSave");
+		}else{
+			mv.addObject("message","该账号已经被注册了！");
+			mv.setViewName("register");
+		}
+		return mv;
 	}
 }

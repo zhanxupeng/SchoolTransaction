@@ -19,4 +19,7 @@ public interface UserMapper {
 	//动态修改
 	@UpdateProvider(type=UserDynaSqlProvider.class,method="updateUser")
 	void update(Map<String,Object> param);
+	//根据id查询
+	@Select("select * from myuser where loginname=#{loginname}")
+	User findByUserId(@Param("loginname") int loginname);
 }

@@ -31,4 +31,10 @@ public class UserServiceImpl implements UserService{
 		// TODO Auto-generated method stub
 		userMapper.save(user);
 	}
+
+	@Override
+	public User selectUser(int loginname) {
+		// TODO Auto-generated method stub
+		return userMapper.findByUserId(loginname);
+	}
 }

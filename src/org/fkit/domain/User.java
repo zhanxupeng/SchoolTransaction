@@ -1,6 +1,11 @@
 package org.fkit.domain;
 
-public class User {
+import java.io.Serializable;
+public class User implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer loginname;
 	private String password;
 	private String username;
