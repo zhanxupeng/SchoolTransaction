@@ -1,7 +1,5 @@
 package org.fkit.mapper;
 
-import java.util.Map;
-
 import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -18,7 +16,7 @@ public interface UserMapper {
 	void save(User user);
 	//动态修改
 	@UpdateProvider(type=UserDynaSqlProvider.class,method="updateUser")
-	void update(Map<String,Object> param);
+	void update(User user);
 	//根据id查询
 	@Select("select * from myuser where loginname=#{loginname}")
 	User findByUserId(@Param("loginname") int loginname);

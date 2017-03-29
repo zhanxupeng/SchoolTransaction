@@ -38,20 +38,35 @@ public class UserController {
 		}
 		return mv;
 	}
+	//修改信息页面
+	@RequestMapping(value="/userchange")
+	public ModelAndView userchange(User user,HttpSession session,ModelAndView mv){
+		System.out.println(user);
+		if(user.getDollar_id()!=null){
+			user.setFlag(1);
+		}
+		userService.updateUser(user);
+		session.removeAttribute("user");
+		mv.setViewName("successChange");
+		return mv;
+	}
+	//自动寻址
 	@RequestMapping(value="/{loginForm}")
 	public String loginForm(@PathVariable String loginForm){
 		return loginForm;
 	}
+	//进入商店页面，待定，考虑删除
 	@RequestMapping(value="/toshop")
 	public String toShop(@RequestParam("small_id") Integer small_id){
 		System.out.println(small_id);
 		return "toshop";
 	}
+	//进入注册页面
 	@RequestMapping(value="/toregister")
 	public String toRegister(){
 		return "register";
 	}
-	//用户注册
+	//用户注册,已经完结
 	@RequestMapping(value="/register")
 	public ModelAndView saveuser(@Valid User user,ModelAndView mv,Errors errors){
 		System.out.println("Hello");

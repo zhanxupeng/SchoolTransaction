@@ -8,35 +8,39 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="changeUser" method="post">
+	<form action="userchange" method="post">
 		<table>
 			<tr>
 				<td>登录名：</td>
-				<td>${user.loginname }</td>
+				<td>
+				${user.loginname }
+				<input type="hidden" name="loginname" value="${user.loginname }"/>
+				</td>
+				
 			</tr>
 			<tr>
 				<td>密码：</td>
-				<td><input type="password" value="${user.password }"/></td>
+				<td><input type="password" value="${user.password }" name="password"/></td>
 			</tr>
 			<tr>	
 				<td>用户名：</td>
-				<td><input type="text" value="${user.username }"/></td>
+				<td><input type="text" value="${user.username }" name="username"/></td>
 			</tr>
 			<tr>
 				<td>性别：</td>
 				<td>
 					<c:choose>
 						<c:when test="${user.sex==null }">
-							<input type="radio" name="sex" value="男"/>男&nbsp;
-							<input type="radio" name="sex" value="女"/>女
+							<input type="radio" name="sex" value="boy"/>男&nbsp;
+							<input type="radio" name="sex" value="girl"/>女
 						</c:when>
 						<c:when test="${user.sex=='boy' }">
-							<input type="radio" name="sex" value="男" checked="checked"/>男&nbsp;
-							<input type="radio" name="sex" value="女"/>女
+							<input type="radio" name="sex" value="boy" checked="checked"/>男&nbsp;
+							<input type="radio" name="sex" value="girl"/>女
 						</c:when>
 						<c:otherwise>
-						<input type="radio" name="sex" value="男"/>男&nbsp;
-							<input type="radio" name="sex" value="女" checked="checked"/>女
+						<input type="radio" name="sex" value="boy"/>男&nbsp;
+							<input type="radio" name="sex" value="girl" checked="checked"/>女
 						</c:otherwise>
 					</c:choose>
 				</td>
@@ -68,7 +72,7 @@
 			<tr>
 				<td>头像:</td>
 				<td>
-					<input type="text" name="iamge" value="${user.image }"/>
+					<input type="text" name="image" value="${user.image }"/>
 				</td>
 			</tr>
 			<tr>

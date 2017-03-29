@@ -21,9 +21,9 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public void updateUser(Map<String, Object> param) {
+	public void updateUser(User user) {
 		// TODO Auto-generated method stub
-		userMapper.update(param);
+		userMapper.update(user);
 	}
 
 	@Override
@@ -37,4 +37,5 @@ public class UserServiceImpl implements UserService{
 		// TODO Auto-generated method stub
 		return userMapper.findByUserId(loginname);
 	}
+
 }

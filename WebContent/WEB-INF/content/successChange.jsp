@@ -4,10 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="refresh" content="3; url='/'">
+<meta http-equiv="refresh" content="3; url='loginForm'">
 <title>Insert title here</title>
 </head>
 <body>
-注册成功，3秒后自动返回登录页面！
+<center>
+	修改成功，三秒后自动返回登录页面！
+</center>
 </body>
 </html>

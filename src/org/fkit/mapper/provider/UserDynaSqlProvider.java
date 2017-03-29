@@ -1,7 +1,5 @@
 package org.fkit.mapper.provider;
 
-import java.util.Map;
-
 import org.apache.ibatis.jdbc.SQL;
 import org.fkit.domain.User;
 
@@ -40,49 +38,37 @@ public class UserDynaSqlProvider {
 		}.toString();
 	}
 	//动态更新
-	public String updateUser(Map<String, Object> param){
+	public String updateUser(User user){
 		return new SQL(){
 			{
 				UPDATE("myuser");
-				if(param.get("password")!=null){
+				if(user.getPassword()!=null){
 					SET(" password =#{password}");
 				}
-				if(param.get("username")!=null){
+				if(user.getUsername()!=null){
 					SET(" username=#{username}");
 				}
-				if(param.get("sex")!=null){
+				if(user.getSex()!=null){
 					SET(" sex=#{sex}");
 				}
-				if(param.get("email")!=null){
+				if(user.getEmail()!=null){
 					SET(" email=#{email}");
 				}
-				if(param.get("phone")!=null){
+				if(user.getPhone()!=null){
 					SET(" phone=#{phone}");
 				}
-				if(param.get("card_id")!=null){
+				if(user.getCard_id()!=null){
 					SET(" card_id=#{card_id}");
 				}
-				if(param.get("dollar_id")!=null){
+				if(user.getDollar_id()!=null){
 					SET(" dollar_id=#{dollar_id}");
 				}
-				if(param.get("flag")!=null){
 					SET(" flag=#{flag}");
+				if(user.getImage()!=null){
+					SET(" image=#{image}");
 				}
-				if(param.get("image")!=null){
-					SET(" image=#{iamge}");
-				}
-				WHERE(" id=#{id}");
+				WHERE(" loginname=#{loginname}");
 			}
 		}.toString();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

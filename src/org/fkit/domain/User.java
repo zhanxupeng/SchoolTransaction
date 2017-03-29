@@ -16,6 +16,30 @@ public class User implements Serializable{
 	private String dollar_id;
 	private int flag;
 	private String image;
+	@Override
+	public String toString(){
+		StringBuilder s=new StringBuilder();
+		s.append(loginname);
+		s.append(",");
+		s.append(password);
+		s.append(",");
+		s.append(username);
+		s.append(",");
+		s.append(sex);
+		s.append(",");
+		s.append(email);
+		s.append(",");
+		s.append(phone);
+		s.append(",");
+		s.append(card_id);
+		s.append(",");
+		s.append(dollar_id);
+		s.append(",");
+		s.append(flag);
+		s.append(",");
+		s.append(image);
+		return s.toString();
+	}
 	public int getLoginname() {
 		return loginname;
 	}
