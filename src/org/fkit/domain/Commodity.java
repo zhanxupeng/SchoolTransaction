@@ -2,14 +2,17 @@ package org.fkit.domain;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Commodity {
 	private int commid;
 	private String name;
 	private String detail;
 	private String picture;
 	private User user;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date end_date;
-	private String bigclass;
+	private String big_class;
 	private int big_id;
 	private String small_class;
 	private int small_id;
@@ -50,11 +53,11 @@ public class Commodity {
 	public void setEnd_date(Date end_date) {
 		this.end_date = end_date;
 	}
-	public String getBigclass() {
-		return bigclass;
+	public String getBig_class() {
+		return big_class;
 	}
-	public void setBigclass(String bigclass) {
-		this.bigclass = bigclass;
+	public void setBig_class(String big_class) {
+		this.big_class = big_class;
 	}
 	public int getBig_id() {
 		return big_id;

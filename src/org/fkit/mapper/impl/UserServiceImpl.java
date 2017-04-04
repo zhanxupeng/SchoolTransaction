@@ -1,6 +1,5 @@
 package org.fkit.mapper.impl;
 
-import java.util.Map;
 
 import org.fkit.domain.User;
 import org.fkit.mapper.UserMapper;

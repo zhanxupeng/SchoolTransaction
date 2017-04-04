@@ -30,22 +30,31 @@
 <center>
 <div class="zero">
 	<div class="one"><img src="image/xiaoyi.jpg" width="150px" height="60px"/></div>
-	<div class="two"><input type="text" name="find" class="search_txt" /> 
-			<input type="submit" class="search_bt" value="搜索" "/></div>
+	<div class="two">
+		<form action="bigclassSelect" target="leftFrame" method="get">
+			<input type="text" name="bigclass" class="search_txt" /> 
+			<input type="submit" class="search_bt" value="搜索"/>
+		</form>
+	</div>
+	<form action="torent" method="get">
 	<div class="there"><input type="submit" class="chuZu_bt" value="我要出租"/></div>
+	</form>
 	<div class="clear"></div>
 </div>
 
 <div class="zero1">
 	<div class="fore">
 		<div class="fore-1">
+			<a href="personpage" target="leftFrame">个人主页</a>
+		</div>
+		<div class="fore-1">
 			闪讯：
 		</div>
 		<div class="fore-1">
-			<a href="toshop?small_id=1" target="leftFrame">10M</a>
+			<a href="smallclass?small_class=10M" target="leftFrame">10M</a>
 		</div>
 		<div class="fore-1">
-			<a href="toshop?small_id=2" target="leftFrame">20M</a>
+			<a href="smallclass?small_class=20M" target="leftFrame">20M</a>
 		</div>
 		<div class="fore-1">单车</div>
 		<div class="fore-1">电驴</div>

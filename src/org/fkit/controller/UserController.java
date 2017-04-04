@@ -1,5 +1,11 @@
 package org.fkit.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -12,6 +18,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -68,18 +75,39 @@ public class UserController {
 	}
 	//用户注册,已经完结
 	@RequestMapping(value="/register")
-	public ModelAndView saveuser(@Valid User user,ModelAndView mv,Errors errors){
+	public ModelAndView saveuser(User user,ModelAndView mv,
+			@RequestParam("file") MultipartFile file,
+			HttpServletRequest request){
 		System.out.println("Hello");
 		User result=userService.selectUser(user.getLoginname());
-		if(errors.hasErrors()){
-			mv.setViewName("register");
-			return mv;
-		}
 		if(result==null){
 			if(user.getDollar_id()!=null){
 				user.setFlag(1);
 			}else{
 				user.setFlag(0);
+			}
+			if(!file.isEmpty()){
+				String str = (new SimpleDateFormat("yyyyMMddHHmmssSSS")).format(new Date());
+				String path=request.getServletContext().getRealPath("/WEB-INF/image/");
+				String filename=file.getOriginalFilename();
+				
+			    String[] s=filename.split("\\.");
+			    str=str+"."+s[1];
+				
+				File filepath=new File(path,filename);
+				if(!filepath.getParentFile().exists()){
+					filepath.getParentFile().mkdirs();
+				}
+				try {
+					file.transferTo(new File(path+File.separator+str));
+				} catch (IllegalStateException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				user.setImage(str);;
 			}
 			userService.insertUser(user);
 			mv.setViewName("successSave");
@@ -89,4 +117,5 @@ public class UserController {
 		}
 		return mv;
 	}
+	
 }

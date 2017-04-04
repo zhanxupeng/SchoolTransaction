@@ -11,7 +11,7 @@
 <body>
 <center>
 	<h3>注册页面</h3>
-	<form action="register" method="post">
+	<form action="register" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td>*登录账号：(1000到9999之间的数字)</td>
@@ -94,12 +94,12 @@
 			</tr>
 			<tr>
 				<td>
-					图片：
+					头像：
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="text" name="image"/>
+					<input type="file" name="file"/>
 				</td>
 			</tr>
 			<tr>
