@@ -20,7 +20,8 @@
 				手机：${user.phone }<br>
 				身份证号：${user.card_id }<br>
 				支付宝号：${user.dollar_id }<br>
-				<a href="useridselect?user_id=${user.loginname }">我的出租</a>
+				<a href="useridselect?user_id=${user.loginname }">我的出租</a>||
+				<a href="selectByuserId">我的订单</a>
 			</td>
 		</tr>
 	</table>

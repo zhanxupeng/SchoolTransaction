@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="userchange" method="post">
+	<form action="userchange" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td>登录名：</td>
@@ -72,7 +72,7 @@
 			<tr>
 				<td>头像:</td>
 				<td>
-					<input type="text" name="image" value="${user.image }"/>
+					<input type="file" name="file">
 				</td>
 			</tr>
 			<tr>

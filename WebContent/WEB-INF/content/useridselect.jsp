@@ -26,8 +26,8 @@
 					学校：${commodity.school }
 				</td>
 				<td width="20%" align="center">
-					<a href="#">修改</a>||
-					<a href="#">删除</a>
+					<a href="changeCommodity?commid=${commodity.commid }">修改</a>||
+					<a href="deleteCommodity?commid=${commodity.commid }">删除</a>
 				</td>
 			</tr>
 		</table>

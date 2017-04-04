@@ -18,7 +18,7 @@
 			${commodity.detail }<br>
 			<div style="color:red">促销价：￥${commodity.big_id }</div><br>
 			<div class="two">
-			<input type="submit" value="购买" class="search_bt"/>
+			<a href="topaydollar?commid=${commodity.commid }">购买</a>
 			</div>
 		</td>
 	</tr>

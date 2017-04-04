@@ -19,7 +19,7 @@
         <p class="navbar-text navbar-right"><a href="toregister">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </c:when>
         <c:otherwise>
-        <p class="navbar-text navbar-right"><a href="main.jsp">退出</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p class="navbar-text navbar-right"><a href="userquit">退出</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         <p class="navbar-text navbar-right">尊敬的[<a href="changeUser">${user.username }]</a>
         	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </c:otherwise>
@@ -64,7 +64,7 @@
 		<div class="fore-1">敬请期待</div>
 	</div>
 	<div class="fore1">
-	<iframe height="100%" width="100%" frameborder="0" src="https://www.baidu.com"
+	<iframe height="100%" width="100%" frameborder="0" src="http://www.taobao.com"
 				name="leftFrame" id="leftFrame" title="leftFrame" scrolling="yes"></iframe>
 	</div>
 </div>

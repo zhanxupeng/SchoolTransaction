@@ -56,11 +56,12 @@ public class CommodityController {
 	 * 进入添加商品界面torent,自动寻址
 	 */
 	@RequestMapping("/torent")
-	public String commidselect(HttpSession session){
+	public String commidselect(HttpSession session,HttpServletRequest request){
 		User user=(User)session.getAttribute("user");
 		if(!(user==null)){
 			return "torent";
 		}
+		request.setAttribute("message", "必须登录才可以出租的哦");
 		return "loginForm";
 	}
 	/*
@@ -109,10 +110,69 @@ public class CommodityController {
 		request.setAttribute("list",list);
 		return "useridselect";
 	}
-	
-	
-	
-	
+	/*
+	 * 删除商品
+	 */
+	@RequestMapping("/deleteCommodity")
+	public String deleteCommodity(int commid,HttpSession session,HttpServletRequest request){
+		commodityService.deleteCommodity(commid);
+		User user=(User)session.getAttribute("user");
+		List<Commodity> list=commodityService.selectByUserid(user.getLoginname());
+		request.setAttribute("list", list);
+		return "useridselect";
+	}
+	/*
+	 * 去修改订单
+	 */
+	@RequestMapping("/changeCommodity")
+	public String changeCommodity(int commid,HttpServletRequest request){
+		Commodity commodity=commodityService.selectByCommid(commid);
+		request.setAttribute("commodity",commodity);
+		return "changeCommodity";
+	}
+	/*
+	 * 修改订单
+	 */
+	@RequestMapping("/surechangeCommodity")
+	public String surechangeCommodity(Commodity commodity,HttpServletRequest request,
+			@RequestParam("file") MultipartFile file,HttpSession session){
+		if(!file.isEmpty()){
+			String str = (new SimpleDateFormat("yyyyMMddHHmmssSSS")).format(new Date());
+			String path=request.getServletContext().getRealPath("/WEB-INF/image/");
+			String filename=file.getOriginalFilename();
+			
+		    String[] s=filename.split("\\.");
+		    str=str+"."+s[1];
+			
+			File filepath=new File(path,filename);
+			if(!filepath.getParentFile().exists()){
+				filepath.getParentFile().mkdirs();
+			}
+			try {
+				file.transferTo(new File(path+File.separator+str));
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			commodity.setPicture(str);
+		}
+		commodityService.updateCommodity(commodity);
+		User user =(User)session.getAttribute("user");
+		List<Commodity> list=commodityService.selectByUserid(user.getLoginname());
+		request.setAttribute("list",list);
+		return "useridselect";
+	}
+	/*
+	 * 进入支付页面
+	 */
+	@RequestMapping("/topaydollar")
+	public String topaydollar(int commid,HttpServletRequest request){
+		request.setAttribute("commid", commid);
+		return "paydollar";
+	}
 	
 	
 	

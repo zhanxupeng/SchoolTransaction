@@ -16,7 +16,7 @@
 		<table>
 			<tr>
 				<td>
-					<img src="image/head.jpg" width="150px" height="140px"/><br>
+					<img src="image/${commodity.user.image }" width="150px" height="140px"/><br>
 					<center>${commodity.user.username}</center>
 				</td>
 				<td>

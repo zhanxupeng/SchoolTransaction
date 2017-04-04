@@ -7,7 +7,6 @@ import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
 import org.fkit.domain.User;
 import org.fkit.service.UserService;
@@ -47,7 +46,31 @@ public class UserController {
 	}
 	//修改信息页面
 	@RequestMapping(value="/userchange")
-	public ModelAndView userchange(User user,HttpSession session,ModelAndView mv){
+	public ModelAndView userchange(User user,HttpSession session,ModelAndView mv,
+			@RequestParam("file") MultipartFile file,HttpServletRequest request){
+		if(!file.isEmpty()){
+			String str = (new SimpleDateFormat("yyyyMMddHHmmssSSS")).format(new Date());
+			String path=request.getServletContext().getRealPath("/WEB-INF/image/");
+			String filename=file.getOriginalFilename();
+			
+		    String[] s=filename.split("\\.");
+		    str=str+"."+s[1];
+			
+			File filepath=new File(path,filename);
+			if(!filepath.getParentFile().exists()){
+				filepath.getParentFile().mkdirs();
+			}
+			try {
+				file.transferTo(new File(path+File.separator+str));
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			user.setImage(str);;
+		}
 		System.out.println(user);
 		if(user.getDollar_id()!=null){
 			user.setFlag(1);
@@ -72,6 +95,14 @@ public class UserController {
 	@RequestMapping(value="/toregister")
 	public String toRegister(){
 		return "register";
+	}
+	/*
+	 * 用户退出
+	 */
+	@RequestMapping(value="/userquit")
+	public String userquit(HttpSession session){
+		session.removeAttribute("user");
+		return "main";
 	}
 	//用户注册,已经完结
 	@RequestMapping(value="/register")
