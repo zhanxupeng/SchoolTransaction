@@ -9,10 +9,11 @@
 </head>
 <body>
 <center>
+欢迎光临
 	<form action="login" method="get">
 		<table>
 			<tr>
-				<td>用户名：</td>
+				<td>用户：</td>
 				<td><input name="loginname" type="text"/></td>
 			</tr>
 			<tr>
