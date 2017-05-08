@@ -1,0 +1,517 @@
+@CHARSET "UTF-8";
+
+.kongbai{
+	
+	width:100%;
+	height:40px;
+}
+.kongbai1{
+	
+	width:100%;
+	height:5px;
+}
+
+.login_top_wrap {
+	width: 100%;
+	height: 200px;
+	background: #2580b0
+		url(../image/1.jpg) 
+		no-repeat center bottom
+}
+
+.login_top {
+	width: 350px;
+	height: 160px;
+	padding-top: 40px;
+	margin:auto;
+	text-align: center	
+}
+
+.login_logo {
+	padding-top: 80px;
+	width: 350px;
+	margin: auto;
+	text-align: center;
+	background:
+		url(../image/4.jpg) center top
+		no-repeat;
+	font-size: 13px;
+	color: #fff
+}
+
+.login_content_wrap {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #fff
+}
+
+.login_content {
+	width: 480px;
+	height: 400px;
+	margin: auto;
+	padding-bottom: 30px;
+	margin-bottom: 40px
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:1) {
+	.login_top_wrap {
+		width: 100%;
+		height: 240px;
+		background: #fff
+			url(/assets/login_cloud-5edcbeba882ad7cc03685300c958e35a.svg) center
+			0 no-repeat
+	}
+	.login_logo {
+		background: none
+	}
+}
+
+.login {
+	width: 280px;
+	margin: auto;
+	padding-top: 25px
+}
+
+.tip_wrap {
+	height: 24px
+}
+
+.login .tip_wrap .tip_attr {
+	padding-left: 30px
+}
+
+.login .tip_wrap .error_tip {
+	background-position: -270px -80px
+}
+
+.tip_attr {
+	height: 24px;
+	line-height: 24px;
+	padding-left: 45px;
+	background:
+		url(/assets/login_icons-57c1ff75c57278de8017387d957891c1.gif)
+		no-repeat
+}
+
+.normal_tip {
+	background-position: -260px -120px;
+	color: #cccccc;
+	font-size: 12px
+}
+
+.tip_wrap .error_tip {
+	background-position: -260px -80px;
+	color: #ee7676;
+	font-size: 12px
+}
+
+.tip_wrap .success_tip {
+	height: 24px;
+	width: 35px;
+	padding: 0;
+	background-position: -260px -40px
+}
+
+.tip_wrap .loading_tip {
+	background-position: -139px -380px
+}
+
+.input_line_wrap {
+	width: 263px;
+	position: relative
+}
+
+.login_clear {
+	position: absolute;
+	right: 3px;
+	top: 0;
+	_top: 25px;
+	*top: 25px;
+	height: 38px;
+	line-height: 38px;
+	width: 18px;
+	text-align: left;
+	background:
+		url(../image/3.jpg) 0 -369px
+		no-repeat;
+	text-indent: -9999px;
+	font-size: 0
+}
+
+a.login_clear:hover {
+	opacity: 0.8;
+	-ms-filter: 'alpha(opacity=80)';
+	filter: alpha(opacity = 80)
+}
+
+.placeholder {
+	position: absolute;
+	top: 14px;
+	_top: 39px;
+	*top: 39px;
+	left: 15px;
+	border: 0;
+	font-size: 12px;
+	line-height: 14px;
+	color: #888
+}
+
+.input_line {
+	padding: 10px 15px;
+	_padding: 8px 15px;
+	*padding: 8px 15px;
+	width: 233px;
+	height: 18px;
+	_height: 22px;
+	*height: 22px;
+	background:
+		url(../image/3.jpg) 0 0
+		no-repeat
+}
+
+.input_line_s {
+	padding: 10px 15px;
+	_padding: 8px 15px;
+	*padding: 8px 15px;
+	width: 88px;
+	height: 18px;
+	_height: 22px;
+	*height: 22px;
+	background:
+		url(/assets/login_icons-57c1ff75c57278de8017387d957891c1.gif) 0 -40px
+		no-repeat
+}
+
+.input_line input.inputbox, .input_line_s input.inputbox {
+	width: 100%;
+	height: 18px;
+	line-height: 18px;
+	padding: 0;
+	font-size: 14px;
+	border: 0;
+	vertical-align: middle
+}
+
+.login p.login_extra_opt {
+	padding: 10px 20px 10px 0;
+	color: #3fa1d1;
+	line-height: 0;
+	height: 14px;
+	line-height: 14px;
+	text-align: right
+}
+
+.login p.login_extra_opt .remember_me {
+	vertical-align: middle;
+	padding: 0;
+	margin: 0;
+	height: 14px;
+	cursor: pointer;
+	float: left
+}
+
+.login .forget_password {
+	color: #b1b1b1;
+	line-height: 14px
+}
+
+.login p a.forget_password:hover {
+	color: #FF9B78;
+	text-decoration: none
+}
+
+.login .login_btns {
+	padding: 5px 18px
+}
+
+.login .login_btn {
+	float: right;
+	display: block;
+	width: 76px;
+	height: 40px;
+	background:
+		url(../image/3.jpg) 0 -80px
+		no-repeat;
+	text-indent: -9999px;
+	font-size: 0
+}
+
+.login a.login_btn:hover {
+	opacity: 0.8;
+	-ms-filter: 'alpha(opacity=80)';
+	filter: alpha(opacity = 80)
+}
+
+.mobile_entry {
+	width: 400px;
+	margin: auto;
+	padding-top: 40px
+}
+
+.mobile_entry .wap_entry {
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 50px 0 25px;
+	background:
+		url(/assets/login_icons-57c1ff75c57278de8017387d957891c1.gif) -270px
+		-379px no-repeat
+}
+
+.mobile_entry a.wap_entry:hover {
+	background:
+		url(/assets/login_icons-57c1ff75c57278de8017387d957891c1.gif) -270px
+		-499px no-repeat
+}
+
+.mobile_entry .iphone_entry {
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 50px 0 30px;
+	background:
+		url(/assets/login_icons-57c1ff75c57278de8017387d957891c1.gif) -270px
+		-300px no-repeat
+}
+
+.mobile_entry a.iphone_entry:hover {
+	background:
+		url(/assets/login_icons-57c1ff75c57278de8017387d957891c1.gif) -270px
+		-420px no-repeat
+}
+
+.mobile_entry .android_entry {
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 0px 0 30px;
+	background:
+		url(/assets/login_icons-57c1ff75c57278de8017387d957891c1.gif) -270px
+		-340px no-repeat
+}
+
+.mobile_entry a.android_entry:hover {
+	background:
+		url(/assets/login_icons-57c1ff75c57278de8017387d957891c1.gif) -270px
+		-460px no-repeat
+}
+
+.mobile_entry a {
+	color: #ccc
+}
+
+.mobile_entry a:hover {
+	color: #3FA1D1
+}
+
+.guest_hotdiary_entry {
+	position: absolute;
+	right: 135px;
+	top: 20px;
+	display: block;
+	width: 101px;
+	height: 39px;
+	background-image:
+		url(/assets/login_icons-57c1ff75c57278de8017387d957891c1.gif);
+	background-position: 0 -460px;
+	background-repeat: no-repeat
+}
+
+a.guest_hotdiary_entry:hover {
+	background-position: 0 -500px
+}
+
+.zhoukan_entry {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	display: block;
+	width: 101px;
+	height: 39px;
+	background-image:
+		url(/assets/login_icons-57c1ff75c57278de8017387d957891c1.gif);
+	background-position: -102px -460px;
+	background-repeat: no-repeat
+}
+
+a.zhoukan_entry:hover {
+	background-position: -102px -500px
+}
+
+.register_content {
+	width: 900px;
+	margin: 0 auto;
+	padding: 30px 50px;
+	margin-bottom: 40px
+}
+
+.new_item .tit {
+	width: 300px;
+	height: 18px;
+	line-height: 18px;
+	padding: 10px 0
+}
+
+.new_item .cont {
+	width: 263px
+}
+
+.new_item .tip_wrap {
+	height: 24px;
+	padding: 7px 0
+}
+
+.register .captcha_img {
+	display: inline-block;
+	float: left
+}
+
+.register a.captcha_swap {
+	float: right;
+	width: 38px;
+	height: 38px;
+	text-indent: -9999px;
+	font-size: 0;
+	background:
+		url(/assets/login_icons-57c1ff75c57278de8017387d957891c1.gif) -265px
+		6px no-repeat
+}
+
+.register p.privacy_link {
+	padding: 0;
+	margin: 10px 0 0 0;
+	height: 14px;
+	line-height: 14px;
+	font-size: 12px;
+	width: 270px;
+	color: #666
+}
+
+.register p input.policy_agree {
+	vertical-align: middle;
+	padding: 0;
+	margin: 0;
+	height: 14px !important;
+	height: 14px;
+	cursor: pointer
+}
+
+.register_btn {
+	float: right;
+	display: block;
+	width: 76px;
+	height: 40px;
+	background:
+		url(../image/3.jpg) -150px
+		-80px no-repeat;
+	text-indent: -9999px;
+	font-size: 0
+}
+
+a.register_btn:hover {
+	font-size: 0;
+	opacity: 0.8;
+	-ms-filter: 'alpha(opacity=80)';
+	filter: alpha(opacity = 80)
+}
+
+.guide_content {
+	width: 940px;
+	margin: auto;
+	margin-bottom: 40px
+}
+
+.guide {
+	padding: 50px 0 20px 500px;
+	width: 440px;
+	background: url(/assets/chl-eg-1-59856ad60b04560a4ea4b129ba8c8670.jpg) 0
+		30px no-repeat;
+	margin-bottom: 90px
+}
+
+.guide_title h1 {
+	padding-bottom: 10px;
+	font-size: 20;
+	font-weight: 700;
+	​font-family: "微软雅黑", ​ "宋体";
+	color: #666
+}
+
+.guide_title p {
+	line-height: 180%;
+	color: #999;
+	font-size: 12px
+}
+
+.guide_form {
+	padding-top: 140px
+}
+
+.guide_form .input_line input.inputbox {
+	font-size: 12px
+}
+
+a.guide_btn {
+	width: 160px;
+	height: 40px;
+	text-indent: -9999px;
+	font-size: 0;
+	background:
+		url(/assets/login_icons-57c1ff75c57278de8017387d957891c1.gif) 0 -120px
+		no-repeat;
+	display: block;
+	float: left
+}
+
+a.guide_btn:hover {
+	font-size: 0;
+	opacity: 0.8;
+	-ms-filter: 'alpha(opacity=80)';
+	filter: alpha(opacity = 80)
+}
+
+.tag_list {
+	width: 265px;
+	height: 52px;
+	float: left;
+	color: #fff;
+	overflow: hidden;
+	margin: 15px 0
+}
+
+.tag_list li {
+	display: block;
+	float: left;
+	position: relative;
+	text-align: center;
+	width: auto;
+	white-space: nowrap;
+	height: 20px;
+	line-height: 20px;
+	margin: 0 5px 5px 0;
+	border: solid 1px #ff99cc
+}
+
+.tag_list li.tag_hover {
+	background: #ffcccc
+}
+
+.tag_list li.tag_on {
+	background: #fe9acc
+}
+
+.tag_list li.tag_hover .tag_name, .tag_list li.tag_on .tag_name {
+	color: #fff
+}
+
+.tag_list li .tag_name {
+	display: block;
+	float: left;
+	height: 14px;
+	line-height: 14px;
+	font-size: 12px;
+	white-space: nowrap;
+	color: #999;
+	padding: 3px 5px
+}

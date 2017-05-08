@@ -7,108 +7,127 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link type="text/css" rel="stylesheet" media="screen" href="css/1.css">
+<link type="text/css" rel="stylesheet" media="screen" href="css/2.css">
+<link type="text/css" rel="stylesheet" media="screen" href="css/3.css">
 </head>
 <body>
+<div id="wrapper">
+
+		<div class="login_top_wrap">
+			<div class="login_top">
+				<div class="login_logo">爱部落是一本轻日记，也是一个简单干净的独立社区</div>
+			</div>
+		</div>
+<div class="kongbai">
+</div>
+
 <center>
-	<h3>注册页面</h3>
 	<form action="register" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
-				<td>*登录账号：(1000到9999之间的数字)</td>
-			</tr>
-			<tr>
+			    <td align="right">
+			    	账号:
+			    </td>
 				<td>
-					<input type="text" name="loginname"/>
+					<input class="inputbox" id="login_account" type="text" name="loginname"/>
 				</td>
 			</tr>
-			<c:if test="${message!=null }">
 			<tr>
+				<c:if test="${message!=null }">
+			
 				<td><p style="color: red">${message }</p></td>
 			</c:if>
-			<tr>
-				<td>*密码：(6到8位数字字母组合)</td>
 			</tr>
 			<tr>
+			</tr>
+			<tr>
+			<td align="right">密码:</td>
 				<td>
-					<input type="password" name="password"/>
+					<input class="inputbox" type="password" name="password"/>
+				</td>
+			</tr>
+			
+			<tr>
+			<td align="right">您的名字:</td>
+				<td>
+					<input class="inputbox" type="text" name="username"/>
 				</td>
 			</tr>
 			<tr>
-				<td>您的名字：</td>
-			</tr>
-			<tr>
-				<td>
-					<input type="text" name="username"/>
-				</td>
-			</tr>
-			<tr>
-				<td>
+				<td align="right">
 					性别:
 				</td>
-			</tr>
-			<tr>
 				<td>
-					<input type="radio" name="sex" value="男"/>男&nbsp;
+				<input  type="radio" name="sex" value="男"/>男&nbsp;
 					<input type="radio" name="sex" value="女"/>女
 				</td>
 			</tr>
+			
+			
 			<tr>
+			     <td align="right">
+					邮箱:
+				</td>
 				<td>
-					邮箱：
+					<input class="inputbox" type="text" name="email"/>
 				</td>
 			</tr>
+			
 			<tr>
+				<td align="right">
+					手机号码:
+				</td>
 				<td>
-					<input type="text" name="email"/>
+					<input class="inputbox" type="text" name="phone"/>
 				</td>
 			</tr>
+			
 			<tr>
+			<td align="right">
+					身份证号:
+				</td>
 				<td>
-					手机号码：
+					<input class="inputbox" type="text" name="card_id"/>
 				</td>
 			</tr>
+			
 			<tr>
+					<td align="right">
+					支付宝账号:
+				</td>
 				<td>
-					<input type="text" name="phone"/>
+					<input class="inputbox" type="text" name="dollar_id"/>
 				</td>
 			</tr>
+				
 			<tr>
-				<td>
-					身份证号：
+			<td align="right">
+					头像:
 				</td>
-			</tr>
-			<tr>
-				<td>
-					<input type="text" name="card_id"/>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					支付宝账号：
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input type="text" name="dollar_id"/>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					头像：
-				</td>
-			</tr>
-			<tr>
 				<td>
 					<input type="file" name="file"/>
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					<input type="submit" value="提交"/>
+					<input type="submit" class="register_btn" id="register_btn"  />
 				</td>
 			</tr>
 		</table>
 	</form>
 </center>
+
+</div>
 </body>
+<style>
+body {
+	background: #EBEBEB;
+}
+
+#wrapper {
+	background: #fff;
+}
+
+</style>
 </html>
