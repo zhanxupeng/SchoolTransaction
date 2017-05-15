@@ -5,6 +5,39 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script language="javascript" src="js/AjaxRequest.js"></script>
+<script type="text/javascript">
+function getProvince(){
+	var loader=new net.AjaxRequest("ZoneServlet?action=getProvince&nocache="+new Date().getTime(),deal_getProvince,onerror,"GET");
+}
+function deal_getProvince(){
+	provinceArr=this.req.responseText.split(",");
+	for(i=0;i<provinceArr.length;i++){
+		document.getElementById("big_class").options[i]=new Option(provinceArr[i], provinceArr[i]);
+	}
+	if(provinceArr[0]!=""){
+		getCity(provinceArr[0]);
+	}
+}
+window.load=function(){
+	getProvince();
+}
+window.onload=function(){
+	getProvince();
+}
+function getCity(selProvince){
+	var loader=new net.AjaxRequest("ZoneServlet?action=getCity&parProvince="+selProvince+"&nocache="
+			+new Date().getTime(),deal_getCity,onerror,"GET");
+}
+function deal_getCity(){
+	cityArr=this.req.responseText.split(",");
+	document.getElementById("small_class").length=0;
+	for(i=0;i<cityArr.length;i++){
+		document.getElementById("small_class").options[i]=new Option(cityArr[i],cityArr[i]);
+	}
+}
+function onerror(){}
+</script>
 </head>
 <body>
 <center>
@@ -58,13 +91,7 @@
 	</tr>
 	<tr>
 		<td>
-			<select name="big_class">
-				<option>闪讯</option>
-				<option>单车</option>
-				<option>电驴</option>
-				<option>汽车</option>
-				<option>球类</option>
-				<option>书籍</option>
+			<select name="big_class" id="big_class" onchange="getCity(this.value)">
 			</select>
 		</td>
 	</tr>
@@ -75,11 +102,7 @@
 	</tr>
 	<tr>
 		<td>
-			<select name="small_class">
-				<option>10M</option>
-				<option>20M</option>
-				<option>50M</option>
-				<option>100M</option>
+			<select name="small_class" id="small_class">
 			</select>
 		</td>
 	</tr>
