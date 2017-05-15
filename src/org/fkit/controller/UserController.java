@@ -4,8 +4,12 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.fkit.domain.User;
@@ -13,13 +17,14 @@ import org.fkit.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.Errors;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
+
 
 @Controller
 public class UserController {
@@ -84,6 +89,37 @@ public class UserController {
 	@RequestMapping(value="/{loginForm}")
 	public String loginForm(@PathVariable String loginForm){
 		return loginForm;
+	}
+	//前端分类ajax
+	@RequestMapping(value="/ZoneServlet")
+	public String message(HttpServletRequest request,String action,HttpServletResponse response,Model model){
+		if("getProvince".equals(action)){
+			response.setCharacterEncoding("GBK");
+			String result="";
+			//CityMap cityMap=new CityMap();
+			Map<String,String[]> map=CityMap.model;
+			Set<String> set=map.keySet();
+			Iterator<String> it=set.iterator();
+			while(it.hasNext()){
+				result=result+it.next()+",";
+			}
+			result=result.substring(0,result.length()-1);
+			model.addAttribute("message", result);
+		}else if("getCity".equals(action)){
+			response.setCharacterEncoding("GBK");
+			String result="";
+			String selProvince=request.getParameter("parProvince");
+			System.out.println(selProvince+"haha");
+			Map<String,String[]> map=CityMap.model;
+			String[] arrCity=map.get(selProvince);
+			System.out.println(arrCity[0]);
+			for(int i=0;i<arrCity.length;i++){
+				result=result+arrCity[i]+",";
+			}
+			result=result.substring(0,result.length()-1);
+			model.addAttribute("message", result);
+		}
+		return "message";
 	}
 	//进入商店页面，待定，考虑删除
 	@RequestMapping(value="/toshop")
