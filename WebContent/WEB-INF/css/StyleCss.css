@@ -55,10 +55,28 @@
 	color:#ffffff; 
 	background-color:#00a2e8;
 }
+
+
 .search_bt:hover{
 	
 	background-color:#f52b00;
 }
+
+.search_bt1{
+	width:50px;
+	height:30px;
+	font-size:12px;
+	font-family:"MicrosoftYaHei","宋体";
+	color:#ffffff; 
+	background-color:#00a2e8;
+}
+
+
+.search_bt1:hover{
+	
+	background-color:#f52b00;
+}
+
 /*我要出租*/
 .chuZu_bt{
 	width:70px;
@@ -121,8 +139,14 @@
 	 }
 
 
-
-
+//字體
+.fore-2{
+		width:60px;
+  		height:20px;
+  		margin:20px;
+  		color:#ffffff;
+  		margin-left:60px;
+	 }
 
 
 

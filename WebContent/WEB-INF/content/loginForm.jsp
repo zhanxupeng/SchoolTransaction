@@ -15,7 +15,7 @@
 
 		<div class="login_top_wrap">
 			<div class="login_top">
-				<div class="login_logo">爱部落是一本轻日记，也是一个简单干净的独立社区</div>
+				<div class="login_logo">校易网是一个深受广大学生欢迎的网站</div>
 			</div>
 		</div>
 
@@ -52,6 +52,9 @@
 				<span class="left lh14">&nbsp;两周内自动登录</span>
 				<a id="forget_a" class="forget_password" href="javascript:void(0);">我忘记了密码?</a>
 			</p>
+			<c:if test="${message !=null }">
+						<p style="color: red">${message }</p>
+					</c:if>
 						<div class="login_btns clearfix">
 							<!-- <a href="javascript:void(0)" id="login_btn" class="login_btn">登录</a> -->
 							<input type="submit"  id="login_btn" class="login_btn"/>

@@ -16,7 +16,7 @@
 
 		<div class="login_top_wrap">
 			<div class="login_top">
-				<div class="login_logo">爱部落是一本轻日记，也是一个简单干净的独立社区</div>
+				<div class="login_logo">校易网是一个深受广大学生欢迎的网站</div>
 			</div>
 		</div>
 <div class="kongbai">

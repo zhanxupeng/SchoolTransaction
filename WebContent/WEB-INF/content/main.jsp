@@ -6,6 +6,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="css/StyleCss.css" type="text/css">
+<script language="javascript" src="js/1.js"></script>
+
+
 
 <title>Insert title here</title>
 </head>
@@ -74,22 +77,42 @@
 
 		<div class="zero1">
 			<div class="fore">
-				<div class="fore-1">
-					<a href="personpage" target="leftFrame">个人主页</a>
+				<div class="fore-2">
+					<a href="personpage" target="leftFrame" style="color:#ffffff">个人主页</a>
+				</div><br/>
+				<div class="fore-2"><input class="search_bt1" type="button" value="闪讯" onclick="show()"></div>
+				
+				<div class="fore-3" id="fore-2" style="display:none">
+					<a href="smallclass?small_class=10M" target="leftFrame" style="color:#ffffff">10M</a>
 				</div>
-				<div class="fore-1">闪讯：</div>
-				<div class="fore-1">
-					<a href="smallclass?small_class=10M" target="leftFrame">10M</a>
-				</div>
-				<div class="fore-1">
-					<a href="smallclass?small_class=20M" target="leftFrame">20M</a>
-				</div>
-				<div class="fore-1">单车</div>
-				<div class="fore-1">电驴</div>
-				<div class="fore-1">汽车</div>
-				<div class="fore-1">球类</div>
-				<div class="fore-1">书籍</div>
-				<div class="fore-1">敬请期待</div>
+				
+				<div id="fore-3" style="display:none">
+					<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">20M</a>
+				</div><br/>
+				<div class="fore-2"><input class="search_bt1" type="button" value="单车" onclick="show1()"></div>
+					<div id="fore-11" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">小黄车</a></div>
+					<div id="fore-12" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">死飞</a></div>
+					<div id="fore-13" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">山地车</a></div><br/>
+				<div class="fore-2"><input class="search_bt1" type="button" value="电驴" onclick="show2()"></div>
+					<div id="fore-21" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">男款电驴</a></div>
+					<div id="fore-22" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">女款电驴</a></div>
+					<div id="fore-23" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">中性电驴</a></div><br/>
+					
+				<div class="fore-2"><input class="search_bt1" type="button" value="汽车" onclick="show3()"></div>
+					<div id="fore-31" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">越野车</a></div>
+					<div id="fore-32" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">小轿车</a></div><br/>
+					
+				<div class="fore-2"><input class="search_bt1" type="button" value="球类" onclick="show4()"></div>
+					<div id="fore-41" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">羽毛球</a></div>
+					<div id="fore-42" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">足球</a></div>
+					<div id="fore-43" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">篮球</a></div>
+					<div id="fore-44" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">乒乓球</a></div><br/>
+				<div class="fore-2"><input class="search_bt1" type="button" value="书籍" onclick="show5()"></div>
+					<div id="fore-51" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">计算机类</a></div>
+					<div id="fore-52" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">文学类</a></div>
+					<div id="fore-53" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">漫画类</a></div>
+					<div id="fore-54" style="display:none">	<a href="smallclass?small_class=20M" target="leftFrame" style="color:#ffffff">小说类</a></div><br/>
+				<div class="fore-2">敬请期待</div>
 			</div>
 			<div class="fore1">
 				<iframe height="100%" width="100%" frameborder="0"
@@ -99,4 +122,7 @@
 		</div>
 	</center>
 </body>
+
+
+
 </html>
