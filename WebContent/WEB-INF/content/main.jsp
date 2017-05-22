@@ -17,7 +17,7 @@
 	<div class="container-fluid">
 		<div>
 			<p class="navbar-text navbar-left">
-				<a href="main.jsp">主页</a>
+				<a href="main">主页</a>
 			</p>
 			<c:choose>
 				<c:when test="${empty user }">

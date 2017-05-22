@@ -42,7 +42,7 @@ public class UserController {
 		User user=userService.login(loginname,password);
 		if(user!=null){
 			session.setAttribute("user", user);
-			mv.setView(new RedirectView("main"));
+			mv.setView(new RedirectView("newmain"));
 		}else{
 			mv.addObject("message","登录名或密码错误，请重新输入！");
 			mv.setViewName("loginForm");
@@ -138,7 +138,7 @@ public class UserController {
 	@RequestMapping(value="/userquit")
 	public String userquit(HttpSession session){
 		session.removeAttribute("user");
-		return "main";
+		return "newmain";
 	}
 	//用户注册,已经完结
 	@RequestMapping(value="/register")

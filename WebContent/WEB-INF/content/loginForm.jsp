@@ -1,107 +1,192 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@  taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="zh">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link type="text/css" rel="stylesheet" media="screen" href="css/1.css">
-<link type="text/css" rel="stylesheet" media="screen" href="css/2.css">
-<link type="text/css" rel="stylesheet" media="screen" href="css/3.css">
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>校易网</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+<link href="js/metronic/plugins/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="js/metronic/plugins/bootstrap/css/bootstrap-responsive.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="js/metronic/plugins/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css" />
+<link href="js/metronic/css/style-metro.css" rel="stylesheet"
+	type="text/css" />
+<link href="js/metronic/css/style.css" rel="stylesheet"
+	type="text/css" />
+<link href="js/metronic/css/style-responsive.css" rel="stylesheet"
+	type="text/css" />
+<link href="js/metronic/css/themes/default.css" rel="stylesheet"
+	type="text/css" id="style_color" />
+<link href="js/metronic/plugins/uniform/css/uniform.default.css"
+	rel="stylesheet" type="text/css" />
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link href="js/metronic/css/pages/lock.css" rel="stylesheet"
+	type="text/css" />
+<!-- END PAGE LEVEL STYLES -->
+<link rel="shortcut icon" href="favicon.ico" />
+<script type="text/javascript" src=" js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src=" js/jquery-migrate-1.2.1.js"></script>
+<link href=" js/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />  
+<script src=" js/ligerUI/js/core/base.js" type="text/javascript"></script>
+<script src=" js/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+<script src=" js/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script>
+<script src=" js/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
+<script type="text/javascript">
+   
+   $(function(){
+	    /** 按了回车键 */
+	   $(document).keydown(function(event){
+		   if(event.keyCode == 13){
+			   $("#login-submit-btn").trigger("click");
+		   }
+	   })
+
+	   /** 给登录按钮绑定点击事件  */
+	   $("#login-submit-btn").on("click",function(){
+		   /** 校验登录参数 ctrl+K */
+		   var loginname = $("#loginname").val();
+		   var password = $("#password").val();
+		   
+		   var msg = "";
+		   
+		   if(!/^\w{4,20}$/.test(loginname)){
+			     msg = "登录名长度必须是6~20之间";
+		   }else if(!/^\w{4,20}$/.test(password)){
+			     msg = "密码长度必须是6~20之间";
+		   }
+		   if(msg !=""){
+			   $.ligerDialog.error(msg);
+			   return;
+		   }
+		   /** 提交表单 */
+		   $("#loginForm").submit();
+		   
+	   })
+	   
+   })
+ 
+
+
+</script>
 </head>
-<body>
-	<div id="wrapper">
-
-		<div class="login_top_wrap">
-			<div class="login_top">
-				<div class="login_logo">校易网是一个深受广大学生欢迎的网站</div>
-			</div>
-		</div>
-
-		<div class="login_content_wrap clearfix">
-			<div class="login_content clearfix">
-				<div class="login">
-					<div class="tip_wrap" id="page_error">
-						<p class="tip_attr error_tip hidden">邮箱或密码错误！</p>
-					</div>
-					
-					
-					<form accept-charset="UTF-8" action="login" autocomplete="off"
-						class="new_user" id="new_user" method="get">
-						<div style="margin: 0; padding: 0; display: inline">
-							<input name="utf8" type="hidden" value="&#x2713;" /><input
-								name="authenticity_token" type="hidden"
-								value="TNF1icnet9uEKF5kPmZFseYjeb9T1MM5YiI1BLrnl2c=" />
-						</div>
-						<div class="input_line_wrap clearfix">
-							<!-- <a id="login_clear" class="login_clear" href="javascript:void(0)">X</a> -->
-							<div class="input_line mt25">
-								<input class="inputbox" id="login_account" name="loginname"
-									type="text" value="" placeholder="登录邮箱" />
-							</div>
-						</div>
-						<div class="input_line_wrap clearfix">
-							<div class="input_line mt25">
-								<input class="inputbox" id="password" name="password"
-									type="password" placeholder="密码" />
-							</div>
-						</div>
-    <p class="login_extra_opt">
-				<input type="checkbox" id="remember_me" class="remember_me" name="user[remember_me]" value="1" checked="checked" /> 
-				<span class="left lh14">&nbsp;两周内自动登录</span>
-				<a id="forget_a" class="forget_password" href="javascript:void(0);">我忘记了密码?</a>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body style="font-family: 微软雅黑">
+	<div class="page-lock">
+		<div class="page-logo" style="margin-bottom: 2px">
+			<p class="brand"
+				style="font-size: 22px; color: #FFF;"> 大学生<font color="#FFCC00">租赁</font><span
+				style="font-size: 13px;">1.0</span> 平台
 			</p>
-			<c:if test="${message !=null }">
-						<p style="color: red">${message }</p>
-					</c:if>
-						<div class="login_btns clearfix">
-							<!-- <a href="javascript:void(0)" id="login_btn" class="login_btn">登录</a> -->
-							<input type="submit"  id="login_btn" class="login_btn"/>
+		</div>
+		<form action="login" method="post" id="loginForm">
+			<div class="page-body">
+				<img class="page-lock-img"
+					src="js/metronic/img/profile/logo2.jpg" alt="">
+				<div class="page-lock-info">
+					<span>&nbsp;</span> 
+					<c:choose>
+						<c:when test="${requestScope.message == null }">
+							<span style="padding-top: 5px">允许以中文名称登录</span>
+						</c:when>
+						<c:otherwise>
+							<span style="padding-top: 5px"><font color="red">${requestScope.message}</font></span>
+						</c:otherwise>
+					</c:choose>
+					
+					<div class="control-group">
+		
+						<div class="controls">
+							<div class="input-icon left">
+								<i class="icon-user"></i> <input
+									class="m-wrap placeholder-no-fix" type="text" placeholder="帐号"
+									id="loginname" name="loginname" value="${loginname}">
+							</div>
 						</div>
-					</form>
-					<div class="c"></div>
-					<p class="alR pt10 pr20">
-						<a href="toregister">还没有帐号？立即注册 &gt;&gt;</a>
-					</p>
+					</div>
+					<div class="control-group">
+						<div class="controls">
+							<div class="input-icon left">
+								<i class="icon-lock"></i> <input
+									class="m-wrap placeholder-no-fix" type="password"
+									placeholder="密码" id="password" name="password"
+									value="${password}">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="relogin">
+						<!-- 单击登录 -->
+						<button type="submit" id="login-submit-btn" class="btn green"
+							style="margin-left: 20px">
+							登录 <i class="m-icon-swapright m-icon-white"></i>
+						</button>
 				</div>
 			</div>
+			<div class="page-footer" style="color: #fff">
+				技术改变生活 <br>
 			</div>
-			</div>
-		
-<%-- <center>
-	<form action="login" method="get">
-		<table>
-			<tr>
-				<td>用户名：</td>
-				<td><input name="loginname" type="text"/></td>
-			</tr>
-			<tr>
-				<td>密码：</td>
-				<td><input name="password" type="password"/></td>
-			</tr>
-			<tr>
-				<td colspan="2">
-					<c:if test="${message !=null }">
-						<p style="color: red">${message }</p>
-					</c:if>
-				</td>
-			<tr>
-				<td colspan="2">
-					<input type="submit" value="登录"/>
-				</td>
-			</tr>
-		</table>
-	</form>
-</center> --%>
-</body>
-<style>
-body {
-	background: #EBEBEB;
-}
+		</form>
+	</div>
+	
+	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+	<!-- BEGIN CORE PLUGINS -->
 
-#wrapper {
-	background: #fff;
-}
-</style>
+	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+	<script
+		src="js/metronic/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js"
+		type="text/javascript"></script>
+	<script src="js/metronic/plugins/bootstrap/js/bootstrap.min.js"
+		type="text/javascript"></script>
+	<!--[if lt IE 9]>
+   <script src="js/metronic/plugins/excanvas.js"></script>
+   <script src="js/metronic/plugins/respond.js"></script>  
+   <![endif]-->
+	<script src="js/metronic/plugins/breakpoints/breakpoints.js"
+		type="text/javascript"></script>
+	<!-- IMPORTANT! jquery.slimscroll.min.js depends on jquery-ui-1.10.1.custom.min.js -->
+	<script src="js/metronic/plugins/uniform/jquery.uniform.min.js"
+		type="text/javascript"></script>
+	<!-- END CORE PLUGINS -->
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+	<script
+		src="js/metronic/plugins/backstretch/jquery.backstretch.min.js"
+		type="text/javascript"></script>
+	<!-- END PAGE LEVEL PLUGINS -->
+	<script src="js/metronic/scripts/app.js"></script>
+	<script src="js/metronic/scripts/lock.js"></script>
+	<script>
+		$(function() {
+			App.init();
+			Lock.init();
+		});
+	</script>
+	<!-- END JAVASCRIPTS -->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push([ '_setAccount', 'UA-37564768-1' ]);
+		_gaq.push([ '_setDomainName', 'keenthemes.com' ]);
+		_gaq.push([ '_setAllowLinker', true ]);
+		_gaq.push([ '_trackPageview' ]);
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://'
+					: 'http://')
+					+ 'stats.g.doubleclick.net/dc.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</body>
+<!-- END BODY -->
 </html>
