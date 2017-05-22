@@ -53,7 +53,7 @@
 						type="submit" class="search_bt" value="搜索" />
 				</form>
 			</div>
-			<form action="torent" method="get">
+			<form action="torent" method="post">
 				<div class="there">
 					<input type="submit" class="chuZu_bt" value="我要出租" />
 				</div>
