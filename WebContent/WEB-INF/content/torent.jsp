@@ -138,9 +138,9 @@ function onerror(){}
 		</td>
 	</tr>
 	<tr>
-		<td height="50px">
-			<input style="width:200px" class="btn btn-success" type="submit" value="提交"/>&nbsp;&nbsp;
-			<input style="width:200px" class="btn btn-warning" type="reset" value="重置"/>
+		<td height="80px">
+			<input style="width:200px;height:40px" class="btn btn-success" type="submit" value="提交"/>&nbsp;&nbsp;
+			<input style="width:200px;height:40px" class="btn btn-warning" type="reset" value="重置"/>
 		</td>
 	</tr>
 </table>
