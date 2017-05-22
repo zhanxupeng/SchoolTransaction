@@ -5,6 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script language="javascript" src="js/AjaxRequest.js"></script>
 <script type="text/javascript">
 function getProvince(){
@@ -41,79 +44,79 @@ function onerror(){}
 </head>
 <body>
 <center>
-	出租，出租，出租，我要出租！<br>
-	<form action="insertcommodity" method="post" enctype="multipart/form-data">
+	<h1>出租，出租，出租，我要出租！</h1><br>
+	<form onsubmit="return jj()" role="form" action="insertcommodity" method="post" enctype="multipart/form-data">
 	<table>
 	<tr>
 		<td>
-			商品名称：
+		    <h3>商品名称：</h3>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<input type="text" name="name"/>
+			<input type="text" class="form-control" name="name" id="name" />
 		</td>
 	</tr>
 	<tr>
 		<td>
-			商品详情：
+			<h3>商品详情：</h3>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<textarea rows="5" cols="60" wrap="true" name="detail"></textarea>
+			<textarea class="form-control" rows="5" cols="60" wrap="true" name="detail" id="detail" ></textarea>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			图片：
+			<h3>图片：</h3>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<input type="file" name="file">
+			<input type="file" name="file" id="file">
 		</td>
 	</tr>
 	<tr>
 		<td>
-			截止日期：
+			<h3>截止日期：</h3>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<input type="text" name="end_date"/>
+			<input class="form-control" type="text" name="end_date" id="end_date" />
 		</td>
 	</tr>
 	<tr>
 		<td>
-			大类：
+			<h3>大类：</h3>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<select name="big_class" id="big_class" onchange="getCity(this.value)">
+			<select class="form-control" name="big_class" id="big_class" onchange="getCity(this.value)">
 			</select>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			小类：
+			<h3>小类：</h3>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<select name="small_class" id="small_class">
+			<select class="form-control" name="small_class" id="small_class" >
 			</select>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			学校：
+			<h3>学校：</h3>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<select name="school">
+			<select class="form-control" name="school" id="school">
 				<option>浙江农林大学</option>
 				<option>杭州电子科技大学</option>
 				<option>浙江理工大学</option>
@@ -126,22 +129,54 @@ function onerror(){}
 	</tr>
 	<tr>
 		<td>
-			售价：
+			<h3>售价：</h3>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<input name="big_id" type="text"/>
+			<input class="form-control" name="big_id" name="big_id" type="text"/>
 		</td>
 	</tr>
 	<tr>
-		<td>
-			<input type="submit" value="提交"/>&nbsp;&nbsp;
-			<input type="reset" value="重置"/>
+		<td height="50px">
+			<input style="width:200px" class="btn btn-success" type="submit" value="提交"/>&nbsp;&nbsp;
+			<input style="width:200px" class="btn btn-warning" type="reset" value="重置"/>
 		</td>
 	</tr>
 </table>
 </form>
 </center>
 </body>
+<script type="text/javascript">
+function jj(){
+	if(document.getElementById("name").value==''){
+	   alert('商品名称不能为空');
+	   return false;
+	}
+	if(document.getElementById("detail").value==''){
+		   alert('商品详情不能为空');
+		   return false;
+		}
+	if(document.getElementById("file").value==''){
+		   alert('图片不能为空');
+		   return false;
+		}
+	if(document.getElementById("end_date").value==''){
+		   alert('截止日期不能为空');
+		   return false;
+		}
+	if(document.getElementById("big_class").value==''){
+		   alert('大类不能为空');
+		   return false;
+		}
+	if(document.getElementById("school").value==''){
+		   alert('学校不能为空');
+		   return false;
+		}
+	if(document.getElementById("big_id").value==''){
+		   alert('售价不能为空');
+		   return false;
+		}
+	}
+</script>
 </html>
