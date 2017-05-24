@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@  taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -83,8 +84,8 @@
 	<div class="page-lock">
 		<div class="page-logo" style="margin-bottom: 2px">
 			<p class="brand"
-				style="font-size: 22px; color: #FFF;"> 大学生<font color="#FFCC00">租赁</font><span
-				style="font-size: 13px;">1.0</span> 平台
+				style="font-size: 22px; color: #FFF;"> 大学生<font color="#FFCC00">租赁</font>平台
+				<span style="font-size: 13px;">1.0</span> 
 			</p>
 		</div>
 		<form action="login" method="post" id="loginForm">

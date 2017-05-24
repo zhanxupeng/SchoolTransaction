@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="refresh" content="3; url='newmain'">
+<link href="css/css.css" type="text/css" rel="stylesheet" />
 <title>Insert title here</title>
 </head>
 <body>

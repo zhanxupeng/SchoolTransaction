@@ -10,6 +10,7 @@
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+<link href="css/css.css" type="text/css" rel="stylesheet" />
 <body>
 <center>
 <table class="table" align="center">

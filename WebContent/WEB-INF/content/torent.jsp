@@ -9,7 +9,18 @@
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script language="javascript" src="js/AjaxRequest.js"></script>
+<style>
+body {
+background-color:#e5f0ff;
+color:#1262b3;
+font-family:"宋体",Arial;
+font-size:12px;
+margin:0 auto;
+text-align:center;
+}
+</style>
 <script type="text/javascript">
+
 function getProvince(){
 	var loader=new net.AjaxRequest("ZoneServlet?action=getProvince&nocache="+new Date().getTime(),deal_getProvince,onerror,"GET");
 }
