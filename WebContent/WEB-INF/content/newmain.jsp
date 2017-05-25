@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>人事管理系统 ——后台登录</title>
+<title>校易网</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="cache-control" content="no-cache" />
@@ -29,12 +29,12 @@
 		//设置定时器	
 		setInterval("getdate();",1000);
 </script>
-<title>Insert title here</title>
+<title>校易网</title>
 </head>
 <body>
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="320" height="80" class="topbg"><img src="images/top_logo.gif" width="320" height="80"></td>
+    <td width="320" height="80" class="topbg"><img src="images/top_logo.png"/></td>
 	<td class="topbg">
 	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
 	    <tr>
@@ -74,10 +74,10 @@
 		</td>
 	</tr>
 </table>
-<iframe height="900" width="12%" frameborder="0"
+<iframe height="600" width="15%" frameborder="0"
 	src="left" name="leftFrame" id="leftFrame"
 	title="leftFrame" scrolling="no" align="left"></iframe>
-<table  height="900" width="88%">
+<table  height="600" width="85%">
 	<tr>
 		<td>
 		<table width="100%" border="0" cellpadding="0" cellspacing="0" align="left">
@@ -90,7 +90,7 @@
 		</table>
 		</td>
 	</tr>
-	<tr height="900">
+	<tr height="600">
 		<td width="100%">
 		<iframe height="1200" width="88%" frameborder="0"
 			src="right" name="rightFrame" id="rightFrame"

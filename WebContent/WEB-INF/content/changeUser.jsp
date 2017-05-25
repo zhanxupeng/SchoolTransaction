@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>校易网</title>
 <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -15,25 +15,26 @@
 <center>
 <table class="table" align="center">
    <form onsubmit="return jj()" class="bs-example bs-example-form" role="form" action="userchange" method="post" enctype="multipart/form-data">
-		<table class="table">
+		<table class="table">	
 			<tr class="success">
-				<td>登录名：</td>
+				<td align="right">登录名：</td>
 				<td>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				${user.loginname }
 				<input type="hidden" name="loginname" value="${user.loginname }"/>
 				</td>
 				
 			</tr>
 			<tr class="warning">
-				<td valign="middle">密码：</td>
-				<td>
+				<td valign="middle"  align="right">密码：</td>
+				<td >
 				<div class="input-group">
 				<input type="password" class="form-control" value="${user.password }" name="password" id="password"/>
 				</div>
 				</td>
 			</tr>
 			<tr class="active">	
-				<td>用户名：</td>
+				<td align="right">用户名：</td>
 				<td>
 				<div class="input-group">
 				<input type="text" class="form-control" value="${user.username }" name="username" id="username"/>
@@ -41,7 +42,7 @@
 				</td>
 			</tr>
 			<tr class="success">
-				<td>性别：</td>
+				<td align="right">性别：</td>
 				<td>
 				<div class="input-group">
 					<c:choose>
@@ -62,7 +63,7 @@
 				</td>
 			</tr>
 			<tr class="warning">
-				<td>email:</td>
+				<td align="right">email:</td>
 				<td>
 				<div class="input-group">
 					<input type="text" class="form-control" name="email" id="email" value="${user.email }"/>
@@ -70,7 +71,7 @@
 				</td>
 			</tr>
 			<tr class="active">
-				<td>phone:</td>
+				<td align="right">phone:</td>
 				<td>
 				<div class="input-group">
 					<input type="text" class="form-control" name="phone" id="phone" value="${user.phone }"/>
@@ -78,7 +79,7 @@
 				</td>
 			</tr>
 			<tr class="success">
-				<td>身份证号：</td>
+				<td align="right">身份证号：</td>
 				<td>
 				<div class="input-group">
 					<input type="text" class="form-control" name="card_id" id="card_id" value="${user.card_id }"/>
@@ -86,7 +87,7 @@
 				</td>
 			</tr>
 			<tr class="warning">
-				<td>支付宝账号:</td>
+				<td align="right">支付宝账号:</td>
 				<td>
 				<div class="input-group">	
 					<input type="text" class="form-control" name="dollar_id" id="dollar_id" value="${user.dollar_id }"/>
@@ -94,7 +95,7 @@
 				</td>
 			</tr>
 			<tr class="active">
-				<td>头像:</td>
+				<td align="right">头像:</td>
 				<td>
 				<div class="input-group">
 					<input type="file"  name="file" id="file" >
@@ -102,8 +103,10 @@
 				</td>
 			</tr>
 			<tr class="success">
-				<td colspan="2" height="50px">
-					<input style="width:300px" class="btn btn-success" type="submit" name="提交" value="提  交"/>
+				<td width="40%">
+				</td>
+				<td height="50px" align="left">
+					<input style="width:150px" class="btn btn-success" type="submit" name="提交" value="提  交"/>
 					
 				</td>
 			</tr>

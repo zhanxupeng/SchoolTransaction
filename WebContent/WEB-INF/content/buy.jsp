@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="css/StyleCss.css" type="text/css">
-<title>Insert title here</title>
+<title>校易网</title>
 </head>
 <body>
 <table width="100%" border="0" cellpadding="0" cellspacing="0">

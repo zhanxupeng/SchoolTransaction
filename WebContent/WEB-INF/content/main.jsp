@@ -10,7 +10,7 @@
 
 
 
-<title>Insert title here</title>
+<title>校易网</title>
 </head>
 <body>
 	<nav class="navbar navbar-default" role="navigation">
